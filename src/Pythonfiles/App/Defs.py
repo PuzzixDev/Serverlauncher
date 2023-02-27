@@ -2,10 +2,10 @@ import logging
 import tkinter as tk
 import os
 import threading
-from pypresence import Presence
 from configparser import ConfigParser
 import subprocess 
 import time
+
 
 # Create a logger object with the desired name
 logger = logging.getLogger('logs')
@@ -26,7 +26,7 @@ logger.addHandler(file_handler)
 config = ConfigParser()
 config.read('config.ini')
 
-path = os.path.join(config['MinecraftServerDownload']['Download-path'], 'run.bat')
+path = os.path.join(config['Server']['Download-path'].strip('"'), 'run.bat')
 
 
 
@@ -50,31 +50,19 @@ class App(tk.Frame):
         self.scrollbar.config(command=self.console.yview)
 
         self.status_bar = tk.Label(self, text="Server Stopped", bd=1, relief=tk.SUNKEN, anchor=tk.W, bg='#FF0000')
-        self.status_bar.pack(side=tk.BOTTOM, fill=tk.X)
+        self.status_bar.pack(side=tk.TOP, fill=tk.X)
 
         self.process = None
         self.running = False
+
+
+
     def rgb(r, g, b):
         return f'#{r:02x}{g:02x}{b:02x}'
 
 
-    def Rich_presents(self, version, server_type):
-        client_id = '1062914822452297790'
-        RPC = Presence(client_id)
-        RPC.connect()
-
-        RPC.update(
-            state=f"Server Type: {server_type}",
-            details=f"Version: {version}",
-            large_image="large",
-            small_image="small"
-        )
 
     def start(self):
-        server_type = config['MinecraftServerDownload']['Type']
-        version = config['MinecraftServerDownload']['Version']
-
-        self.Rich_presents(version, server_type)
 
         self.status_bar.config(text="Server Starting...", bg = "#8B8000")
         os.system('taskkill /F /IM java.exe')
@@ -90,7 +78,9 @@ class App(tk.Frame):
 
     def _start(self):
         try:
-            self.process = subprocess.Popen([path],stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+            startupinfo = subprocess.STARTUPINFO()
+            startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+            self.process = subprocess.Popen([path], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, startupinfo=startupinfo)
             self.running = True
 
             while self.running:
@@ -100,7 +90,9 @@ class App(tk.Frame):
                     if output and self.running:
                         self.console.insert('end', output)
                         self.console.yview('end')
-                        if "Done (" in output:
+                        if 'Preparing level "world"' in output:
+                            self.status_bar.config(text="Generating world...", bg = "#8B8000")
+                        elif "Done (" in output:
                             self.loading_complete()
 
                         # Log each line of output from the server to the log file
@@ -134,12 +126,3 @@ class App(tk.Frame):
             except Exception as e:
                 print(f"Error could not clear console: {e}")
                 logger.error(f"Error could not clear console: {e}")
-    
-    def create(self):
-            try:
-                import src.Pythonfiles.Server.Create as writing
-                (writing)
-                logger.info('Server has been created')
-            except Exception as e:
-                print(f"Error creating server: {e}")
-                logger.error(f"Error creating server: {e}")

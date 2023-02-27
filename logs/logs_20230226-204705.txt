@@ -1,0 +1,92 @@
+2023-02-26 20:47:30,961 - logs - INFO - Starting server...
+2023-02-26 20:47:31,105 - logs - INFO - Unpacking 1.19.3/server-1.19.3.jar (versions:1.19.3) to versions\1.19.3\server-1.19.3.jar
+2023-02-26 20:47:31,224 - logs - INFO - Unpacking com/github/oshi/oshi-core/6.2.2/oshi-core-6.2.2.jar (libraries:com.github.oshi:oshi-core:6.2.2) to libraries\com\github\oshi\oshi-core\6.2.2\oshi-core-6.2.2.jar
+2023-02-26 20:47:31,234 - logs - INFO - Unpacking com/google/code/gson/gson/2.10/gson-2.10.jar (libraries:com.google.code.gson:gson:2.10) to libraries\com\google\code\gson\gson\2.10\gson-2.10.jar
+2023-02-26 20:47:31,241 - logs - INFO - Unpacking com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar (libraries:com.google.guava:failureaccess:1.0.1) to libraries\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar
+2023-02-26 20:47:31,248 - logs - INFO - Unpacking com/google/guava/guava/31.1-jre/guava-31.1-jre.jar (libraries:com.google.guava:guava:31.1-jre) to libraries\com\google\guava\guava\31.1-jre\guava-31.1-jre.jar
+2023-02-26 20:47:31,271 - logs - INFO - Unpacking com/mojang/authlib/3.16.29/authlib-3.16.29.jar (libraries:com.mojang:authlib:3.16.29) to libraries\com\mojang\authlib\3.16.29\authlib-3.16.29.jar
+2023-02-26 20:47:31,276 - logs - INFO - Unpacking com/mojang/brigadier/1.0.18/brigadier-1.0.18.jar (libraries:com.mojang:brigadier:1.0.18) to libraries\com\mojang\brigadier\1.0.18\brigadier-1.0.18.jar
+2023-02-26 20:47:31,279 - logs - INFO - Unpacking com/mojang/datafixerupper/5.0.28/datafixerupper-5.0.28.jar (libraries:com.mojang:datafixerupper:5.0.28) to libraries\com\mojang\datafixerupper\5.0.28\datafixerupper-5.0.28.jar
+2023-02-26 20:47:31,290 - logs - INFO - Unpacking com/mojang/javabridge/2.0.25/javabridge-2.0.25.jar (libraries:com.mojang:javabridge:2.0.25) to libraries\com\mojang\javabridge\2.0.25\javabridge-2.0.25.jar
+2023-02-26 20:47:31,291 - logs - INFO - Unpacking com/mojang/logging/1.1.1/logging-1.1.1.jar (libraries:com.mojang:logging:1.1.1) to libraries\com\mojang\logging\1.1.1\logging-1.1.1.jar
+2023-02-26 20:47:31,295 - logs - INFO - Unpacking commons-io/commons-io/2.11.0/commons-io-2.11.0.jar (libraries:commons-io:commons-io:2.11.0) to libraries\commons-io\commons-io\2.11.0\commons-io-2.11.0.jar
+2023-02-26 20:47:31,300 - logs - INFO - Unpacking io/netty/netty-buffer/4.1.82.Final/netty-buffer-4.1.82.Final.jar (libraries:io.netty:netty-buffer:4.1.82.Final) to libraries\io\netty\netty-buffer\4.1.82.Final\netty-buffer-4.1.82.Final.jar
+2023-02-26 20:47:31,305 - logs - INFO - Unpacking io/netty/netty-codec/4.1.82.Final/netty-codec-4.1.82.Final.jar (libraries:io.netty:netty-codec:4.1.82.Final) to libraries\io\netty\netty-codec\4.1.82.Final\netty-codec-4.1.82.Final.jar
+2023-02-26 20:47:31,312 - logs - INFO - Unpacking io/netty/netty-common/4.1.82.Final/netty-common-4.1.82.Final.jar (libraries:io.netty:netty-common:4.1.82.Final) to libraries\io\netty\netty-common\4.1.82.Final\netty-common-4.1.82.Final.jar
+2023-02-26 20:47:31,319 - logs - INFO - Unpacking io/netty/netty-handler/4.1.82.Final/netty-handler-4.1.82.Final.jar (libraries:io.netty:netty-handler:4.1.82.Final) to libraries\io\netty\netty-handler\4.1.82.Final\netty-handler-4.1.82.Final.jar
+2023-02-26 20:47:31,324 - logs - INFO - Unpacking io/netty/netty-resolver/4.1.82.Final/netty-resolver-4.1.82.Final.jar (libraries:io.netty:netty-resolver:4.1.82.Final) to libraries\io\netty\netty-resolver\4.1.82.Final\netty-resolver-4.1.82.Final.jar
+2023-02-26 20:47:31,328 - logs - INFO - Unpacking io/netty/netty-transport/4.1.82.Final/netty-transport-4.1.82.Final.jar (libraries:io.netty:netty-transport:4.1.82.Final) to libraries\io\netty\netty-transport\4.1.82.Final\netty-transport-4.1.82.Final.jar
+2023-02-26 20:47:31,335 - logs - INFO - Unpacking io/netty/netty-transport-classes-epoll/4.1.82.Final/netty-transport-classes-epoll-4.1.82.Final.jar (libraries:io.netty:netty-transport-classes-epoll:4.1.82.Final) to libraries\io\netty\netty-transport-classes-epoll\4.1.82.Final\netty-transport-classes-epoll-4.1.82.Final.jar
+2023-02-26 20:47:31,340 - logs - INFO - Unpacking io/netty/netty-transport-native-epoll/4.1.82.Final/netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar (libraries:io.netty:netty-transport-native-epoll:4.1.82.Final:linux-x86_64) to libraries\io\netty\netty-transport-native-epoll\4.1.82.Final\netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar
+2023-02-26 20:47:31,343 - logs - INFO - Unpacking io/netty/netty-transport-native-epoll/4.1.82.Final/netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar (libraries:io.netty:netty-transport-native-epoll:4.1.82.Final:linux-aarch_64) to libraries\io\netty\netty-transport-native-epoll\4.1.82.Final\netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar
+2023-02-26 20:47:31,343 - logs - INFO - Unpacking io/netty/netty-transport-native-unix-common/4.1.82.Final/netty-transport-native-unix-common-4.1.82.Final.jar (libraries:io.netty:netty-transport-native-unix-common:4.1.82.Final) to libraries\io\netty\netty-transport-native-unix-common\4.1.82.Final\netty-transport-native-unix-common-4.1.82.Final.jar
+2023-02-26 20:47:31,347 - logs - INFO - Unpacking it/unimi/dsi/fastutil/8.5.9/fastutil-8.5.9.jar (libraries:it.unimi.dsi:fastutil:8.5.9) to libraries\it\unimi\dsi\fastutil\8.5.9\fastutil-8.5.9.jar
+2023-02-26 20:47:31,521 - logs - INFO - Unpacking net/java/dev/jna/jna/5.12.1/jna-5.12.1.jar (libraries:net.java.dev.jna:jna:5.12.1) to libraries\net\java\dev\jna\jna\5.12.1\jna-5.12.1.jar
+2023-02-26 20:47:31,540 - logs - INFO - Unpacking net/java/dev/jna/jna-platform/5.12.1/jna-platform-5.12.1.jar (libraries:net.java.dev.jna:jna-platform:5.12.1) to libraries\net\java\dev\jna\jna-platform\5.12.1\jna-platform-5.12.1.jar
+2023-02-26 20:47:31,550 - logs - INFO - Unpacking net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar (libraries:net.sf.jopt-simple:jopt-simple:5.0.4) to libraries\net\sf\jopt-simple\jopt-simple\5.0.4\jopt-simple-5.0.4.jar
+2023-02-26 20:47:31,556 - logs - INFO - Unpacking org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar (libraries:org.apache.commons:commons-lang3:3.12.0) to libraries\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar
+2023-02-26 20:47:31,566 - logs - INFO - Unpacking org/apache/logging/log4j/log4j-api/2.19.0/log4j-api-2.19.0.jar (libraries:org.apache.logging.log4j:log4j-api:2.19.0) to libraries\org\apache\logging\log4j\log4j-api\2.19.0\log4j-api-2.19.0.jar
+2023-02-26 20:47:31,576 - logs - INFO - Unpacking org/apache/logging/log4j/log4j-core/2.19.0/log4j-core-2.19.0.jar (libraries:org.apache.logging.log4j:log4j-core:2.19.0) to libraries\org\apache\logging\log4j\log4j-core\2.19.0\log4j-core-2.19.0.jar
+2023-02-26 20:47:31,588 - logs - INFO - Unpacking org/apache/logging/log4j/log4j-slf4j2-impl/2.19.0/log4j-slf4j2-impl-2.19.0.jar (libraries:org.apache.logging.log4j:log4j-slf4j2-impl:2.19.0) to libraries\org\apache\logging\log4j\log4j-slf4j2-impl\2.19.0\log4j-slf4j2-impl-2.19.0.jar
+2023-02-26 20:47:31,593 - logs - INFO - Unpacking org/joml/joml/1.10.5/joml-1.10.5.jar (libraries:org.joml:joml:1.10.5) to libraries\org\joml\joml\1.10.5\joml-1.10.5.jar
+2023-02-26 20:47:31,600 - logs - INFO - Unpacking org/slf4j/slf4j-api/2.0.1/slf4j-api-2.0.1.jar (libraries:org.slf4j:slf4j-api:2.0.1) to libraries\org\slf4j\slf4j-api\2.0.1\slf4j-api-2.0.1.jar
+2023-02-26 20:47:31,606 - logs - INFO - Starting net.minecraft.server.Main
+2023-02-26 20:47:36,206 - logs - INFO - [20:47:36] [ServerMain/INFO]: Building unoptimized datafixer
+2023-02-26 20:47:37,502 - logs - INFO - [20:47:37] [ServerMain/ERROR]: Failed to load properties from file: server.properties
+2023-02-26 20:47:37,531 - logs - INFO - [20:47:37] [ServerMain/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+2023-02-26 20:47:39,716 - logs - INFO - [20:47:39] [ServerMain/INFO]: Loaded 7 recipes
+2023-02-26 20:47:40,002 - logs - INFO - [20:47:40] [ServerMain/INFO]: Loaded 1179 advancements
+2023-02-26 20:47:40,536 - logs - INFO - [20:47:40] [Server thread/INFO]: Starting minecraft server version 1.19.3
+2023-02-26 20:47:40,541 - logs - INFO - [20:47:40] [Server thread/INFO]: Loading properties
+2023-02-26 20:47:40,544 - logs - INFO - [20:47:40] [Server thread/INFO]: Default game type: SURVIVAL
+2023-02-26 20:47:40,546 - logs - INFO - [20:47:40] [Server thread/INFO]: Generating keypair
+2023-02-26 20:47:40,627 - logs - INFO - [20:47:40] [Server thread/INFO]: Starting Minecraft server on *:25565
+2023-02-26 20:47:40,702 - logs - INFO - [20:47:40] [Server thread/INFO]: Using default channel type
+2023-02-26 20:47:40,941 - logs - INFO - [20:47:40] [Server thread/INFO]: Preparing level "world"
+2023-02-26 20:47:42,713 - logs - INFO - [20:47:42] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+2023-02-26 20:47:44,488 - logs - INFO - [20:47:44] [Worker-Main-7/INFO]: Preparing spawn area: 0%
+2023-02-26 20:47:44,494 - logs - INFO - [20:47:44] [Worker-Main-7/INFO]: Preparing spawn area: 0%
+2023-02-26 20:47:44,497 - logs - INFO - [20:47:44] [Worker-Main-7/INFO]: Preparing spawn area: 0%
+2023-02-26 20:47:44,509 - logs - INFO - [20:47:44] [Worker-Main-7/INFO]: Preparing spawn area: 0%
+2023-02-26 20:47:44,721 - logs - INFO - [20:47:44] [Worker-Main-4/INFO]: Preparing spawn area: 0%
+2023-02-26 20:47:45,242 - logs - INFO - [20:47:45] [Worker-Main-1/INFO]: Preparing spawn area: 0%
+2023-02-26 20:47:45,718 - logs - INFO - [20:47:45] [Worker-Main-2/INFO]: Preparing spawn area: 0%
+2023-02-26 20:47:46,225 - logs - INFO - [20:47:46] [Worker-Main-5/INFO]: Preparing spawn area: 0%
+2023-02-26 20:47:46,723 - logs - INFO - [20:47:46] [Worker-Main-6/INFO]: Preparing spawn area: 2%
+2023-02-26 20:47:47,228 - logs - INFO - [20:47:47] [Worker-Main-7/INFO]: Preparing spawn area: 3%
+2023-02-26 20:47:47,720 - logs - INFO - [20:47:47] [Worker-Main-1/INFO]: Preparing spawn area: 5%
+2023-02-26 20:47:48,240 - logs - INFO - [20:47:48] [Worker-Main-3/INFO]: Preparing spawn area: 8%
+2023-02-26 20:47:48,780 - logs - INFO - [20:47:48] [Worker-Main-6/INFO]: Preparing spawn area: 9%
+2023-02-26 20:47:49,245 - logs - INFO - [20:47:49] [Worker-Main-6/INFO]: Preparing spawn area: 11%
+2023-02-26 20:47:49,735 - logs - INFO - [20:47:49] [Worker-Main-7/INFO]: Preparing spawn area: 15%
+2023-02-26 20:47:50,217 - logs - INFO - [20:47:50] [Worker-Main-1/INFO]: Preparing spawn area: 17%
+2023-02-26 20:47:50,721 - logs - INFO - [20:47:50] [Worker-Main-1/INFO]: Preparing spawn area: 21%
+2023-02-26 20:47:51,233 - logs - INFO - [20:47:51] [Worker-Main-5/INFO]: Preparing spawn area: 23%
+2023-02-26 20:47:51,723 - logs - INFO - [20:47:51] [Worker-Main-7/INFO]: Preparing spawn area: 27%
+2023-02-26 20:47:52,226 - logs - INFO - [20:47:52] [Worker-Main-3/INFO]: Preparing spawn area: 29%
+2023-02-26 20:47:52,719 - logs - INFO - [20:47:52] [Worker-Main-4/INFO]: Preparing spawn area: 32%
+2023-02-26 20:47:53,232 - logs - INFO - [20:47:53] [Worker-Main-7/INFO]: Preparing spawn area: 35%
+2023-02-26 20:47:53,717 - logs - INFO - [20:47:53] [Worker-Main-7/INFO]: Preparing spawn area: 38%
+2023-02-26 20:47:54,221 - logs - INFO - [20:47:54] [Worker-Main-3/INFO]: Preparing spawn area: 42%
+2023-02-26 20:47:54,748 - logs - INFO - [20:47:54] [Worker-Main-7/INFO]: Preparing spawn area: 43%
+2023-02-26 20:47:55,258 - logs - INFO - [20:47:55] [Worker-Main-6/INFO]: Preparing spawn area: 44%
+2023-02-26 20:47:55,721 - logs - INFO - [20:47:55] [Worker-Main-6/INFO]: Preparing spawn area: 47%
+2023-02-26 20:47:56,219 - logs - INFO - [20:47:56] [Worker-Main-7/INFO]: Preparing spawn area: 50%
+2023-02-26 20:47:56,721 - logs - INFO - [20:47:56] [Worker-Main-6/INFO]: Preparing spawn area: 55%
+2023-02-26 20:47:57,281 - logs - INFO - [20:47:57] [Worker-Main-3/INFO]: Preparing spawn area: 56%
+2023-02-26 20:47:57,719 - logs - INFO - [20:47:57] [Worker-Main-7/INFO]: Preparing spawn area: 59%
+2023-02-26 20:47:58,217 - logs - INFO - [20:47:58] [Worker-Main-1/INFO]: Preparing spawn area: 61%
+2023-02-26 20:47:58,749 - logs - INFO - [20:47:58] [Worker-Main-5/INFO]: Preparing spawn area: 65%
+2023-02-26 20:47:59,218 - logs - INFO - [20:47:59] [Worker-Main-3/INFO]: Preparing spawn area: 68%
+2023-02-26 20:47:59,719 - logs - INFO - [20:47:59] [Worker-Main-5/INFO]: Preparing spawn area: 71%
+2023-02-26 20:48:00,224 - logs - INFO - [20:48:00] [Worker-Main-1/INFO]: Preparing spawn area: 74%
+2023-02-26 20:48:00,732 - logs - INFO - [20:48:00] [Worker-Main-2/INFO]: Preparing spawn area: 76%
+2023-02-26 20:48:01,232 - logs - INFO - [20:48:01] [Worker-Main-6/INFO]: Preparing spawn area: 81%
+2023-02-26 20:48:01,731 - logs - INFO - [20:48:01] [Worker-Main-4/INFO]: Preparing spawn area: 82%
+2023-02-26 20:48:02,215 - logs - INFO - [20:48:02] [Worker-Main-7/INFO]: Preparing spawn area: 84%
+2023-02-26 20:48:02,724 - logs - INFO - [20:48:02] [Worker-Main-2/INFO]: Preparing spawn area: 87%
+2023-02-26 20:48:03,220 - logs - INFO - [20:48:03] [Worker-Main-5/INFO]: Preparing spawn area: 90%
+2023-02-26 20:48:03,721 - logs - INFO - [20:48:03] [Worker-Main-4/INFO]: Preparing spawn area: 94%
+2023-02-26 20:48:04,221 - logs - INFO - [20:48:04] [Worker-Main-4/INFO]: Preparing spawn area: 98%
+2023-02-26 20:48:04,494 - logs - INFO - [20:48:04] [Server thread/INFO]: Time elapsed: 21780 ms
+2023-02-26 20:48:04,499 - logs - INFO - [20:48:04] [Server thread/INFO]: Done (23.555s)! For help, type "help"

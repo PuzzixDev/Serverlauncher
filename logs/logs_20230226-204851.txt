@@ -1,0 +1,5 @@
+2023-02-26 20:48:53,347 - logs - INFO - Starting server...
+2023-02-26 20:48:53,724 - logs - INFO - Starting net.minecraft.server.Main
+2023-02-26 20:48:58,425 - logs - INFO - [20:48:58] [ServerMain/INFO]: Building unoptimized datafixer
+2023-02-26 20:48:59,706 - logs - INFO - [20:48:59] [ServerMain/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+2023-02-26 20:49:00,005 - logs - INFO - Server stopped

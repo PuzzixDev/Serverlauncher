@@ -17,9 +17,12 @@ async def on_ready():
     await bot.change_presence(status=discord.Status.online, activity=activity)
     print(f"{bot.user} is ready and online!")
 
-@bot.slash_command(name = "start", description = "Starts the minecraft server")
-async def Startserver(ctx):
-    await ctx.respond("Starting server!")
-    os.startfile(os.path.join(download + "//run.bat"))
+@bot.slash_command
+async def create_server():
+    try:
+        from src.Pythonfiles.Server.Create import server_download as write
+        (write)
+    except Exception as e:
+        print(f"Error creating server: {e}")
 
 bot.run(token)
