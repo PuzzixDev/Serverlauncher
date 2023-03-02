@@ -1,37 +1,34 @@
-import dropbox
 import os
+import urllib.request
 from configparser import ConfigParser
+from Types.Vanilla import urls
 
 config = ConfigParser()
 config.read('config.ini')
 
 version = config['Server']['Version'].split('"')[1]
 
-
 Download_path = config['Server']['Download-path'].replace('"', '').split(',')
+type = config['Server']['Type'].replace('"', '')
+mem = config['Server']['Memory'].replace('"', '').replace('[', '').replace(']', '').replace(',', '')
 
-
-# Enter your access token here
-access_token = 'haha no'
-
-class download:
-
-    # Create a Dropbox client
-    client = dropbox.Dropbox(access_token)
+url = urls.get(version)
+url = url.split("?")[0]  # Remove any query string parameters from the URL
+if url:
+    # Get the filename from the URL
+    filename = url.split("/")[-1]
 
     # Specify the file path in Dropbox
-    dropbox_path = os.path.join('/.jars/'f'{version}.jar')
+    dropbox_path = os.path.join('/.jars', filename)
 
     # Specify the local file path where the file will be downloaded
-    local_path = os.path.join(Download_path[0], f'{version}.jar')
+    local_path = os.path.join(Download_path[0], filename)
 
     print(f"Local path: {local_path}")
 
     # Download the file from Dropbox
-    client.files_download_to_file(local_path, dropbox_path)
+    urllib.request.urlretrieve(url, local_path)
 
-    type = config['Server']['Type'].replace('"', '')
-    mem = config['Server']['Memory'].replace('"', '').replace('[', '').replace(']', '').replace(',', '')
     # Rename the file if it doesn't already exist
     new_local_path = os.path.join(Download_path[0], f"{type}_{version}.jar")
 
@@ -57,3 +54,5 @@ class download:
         l4 = f'"{java_path}\\bin\\java" -Xmx{mem}M -Xms{mem}M -jar {type}_{version}.jar nogui\n"'
         l5 = "PAUSE\n"
         f.write(l1 + l2 + l3 + l4 + l5)
+else:
+    print(f"No URL found for version {version}")
