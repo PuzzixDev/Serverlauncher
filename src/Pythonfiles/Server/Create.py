@@ -12,7 +12,7 @@ Download_path = config['Server']['Download-path'].replace('"', '').split(',')
 
 
 # Enter your access token here
-access_token = 'sl.BZuIxpfG5CDEu89dT3I52eyVmrzigho2htFqPZ9cmuTWW-tUiDLXOdtKzdF9mJgIDBqKmshbU41xGK4wWFrLEmkM__l-HLLF-csZNyIpZbcp-qh7DUpzkMiAt0_adAOhGUq1obqNu7KL'
+access_token = 'haha no'
 
 class download:
 
