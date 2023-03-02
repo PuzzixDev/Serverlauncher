@@ -33,6 +33,7 @@ notebook.pack(expand=True, fill="both")
 frame1 = ttk.Frame(notebook)
 notebook.add(frame1, text="Server Management")
 
+
 client_id = '1062914822452297790'
 RPC = Presence(client_id)
 RPC.connect()
