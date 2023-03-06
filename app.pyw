@@ -58,15 +58,13 @@ app.pack(side="top", fill="both", expand=True)
 start_btn = customtkinter.CTkButton(master=frame1, text='Start server', command=app.start)
 start_btn.pack(pady=(10), anchor='w')
 
-def create_server():
-    try:
-        from src.Pythonfiles.Server.Create import download as write
-        (write)
-    except Exception as e:
-        print(f"Error creating server: {e}")
+#def create_server():
+#        from src.Pythonfiles.Server.Create import download_server as e
+#        (e)
+        
 
-create_btn = customtkinter.CTkButton(master=frame1, text='Create server', command=create_server)
-create_btn.pack(pady=(10), anchor='w')
+#create_btn = customtkinter.CTkButton(master=frame1, text='Create server', command=create_server)
+#create_btn.pack(pady=(10), anchor='w')
 
 clear_btn = customtkinter.CTkButton(master=frame1, text="Clear Console", command=app.clear_console)
 clear_btn.pack(pady=(10), anchor='w')
