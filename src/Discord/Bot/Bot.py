@@ -20,7 +20,7 @@ async def on_ready():
 @bot.slash_command
 async def create_server():
     try:
-        from src.Pythonfiles.Server.Create import server_download as write
+        from Pythonfiles.Server.Server_main.Create import server_download as write
         (write)
     except Exception as e:
         print(f"Error creating server: {e}")

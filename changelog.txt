@@ -4,4 +4,11 @@ Added dropbox urls instead of using the dropbox token.
 
 Added vanilla.py more are coming in the future examlpe("spigot.py","bukkit.py","fabric.py","forge.py")
 
-update 2: The create servre button us broken so i just removed it.
+update 2: 
+
+The create servre button us broken so i just removed it.
+
+update 3:
+
+Added auto updating from github
+

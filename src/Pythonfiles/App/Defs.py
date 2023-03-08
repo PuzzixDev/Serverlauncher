@@ -1,11 +1,16 @@
 import logging
 import tkinter as tk
 import os
+import re
 import threading
 from configparser import ConfigParser
+from github import Github
 import subprocess 
 import time
-
+import urllib.request
+import requests
+import shutil
+import zipfile
 
 # Create a logger object with the desired name
 logger = logging.getLogger('logs')
@@ -16,6 +21,8 @@ if not os.path.exists(log_dir):
     os.makedirs(log_dir)
 log_path = os.path.join(log_dir,f"logs_{time.strftime('%Y%m%d-%H%M%S')}.txt")
 file_handler = logging.FileHandler(log_path)
+
+
 
 # Create a formatter to format log messages
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -29,8 +36,30 @@ config.read('config.ini')
 path = os.path.join(config['Server']['Download-path'].strip('"'), 'run.bat')
 
 
+class OnlinePlayerWidget(tk.Frame):
+    def __init__(self, master, player):
+        super().__init__(master, style='TFrame')
+        self.player = player
+        self.master = master
+        self.configure(height=80, width=180)
 
-class App(tk.Frame):
+        # create label to display username
+        self.username_label = tk.Label(self, text=self.player.username, style='TLabel')
+        self.username_label.pack(side='top', pady=5)
+
+        # create canvas to display skin
+        self.skin_canvas = tk.Canvas(self, height=60, width=60, bg='#ffffff', bd=0, highlightthickness=0)
+        self.skin_canvas.pack(side='top', pady=5)
+
+        # load skin from URL
+        skin_url = f"https://crafatar.com/skins/{self.player.uuid}"
+        skin_image_data = urllib.request.urlopen(skin_url).read()
+        self.skin_image = tk.PhotoImage(data=skin_image_data)
+        self.skin_canvas.create_image(0, 0, anchor='nw', image=self.skin_image)
+
+
+
+class Server(tk.Frame):
     def __init__(self, master=None):
         super().__init__(master)
 
@@ -61,9 +90,29 @@ class App(tk.Frame):
         return f'#{r:02x}{g:02x}{b:02x}'
 
 
+    def get_online_players():
+        log_dir = 'logs'
+        # Wait for logs directory to be created
+        while not os.path.exists(log_dir):
+            time.sleep(1)
+        # Wait for log file to be generated
+        time.sleep(5)
+        try:
+            log_files = os.listdir(log_dir)
+            latest_log_file = max(log_files, key=os.path.getctime)
+            with open(f'{log_dir}/{latest_log_file}', 'r') as f:
+                contents = f.read()
+            matches = re.findall(r'(?<=UUID of player )(.+?)(?= is )', contents)
+            players = set(matches)
+            return players
+        except (FileNotFoundError, ValueError) as e:
+            print(f"Error: {e}")
+            return set()
+
 
     def start(self):
 
+       
         self.status_bar.config(text="Server Starting...", bg = "#8B8000")
         os.system('taskkill /F /IM java.exe')
 
@@ -72,6 +121,9 @@ class App(tk.Frame):
 
         # Log a message when the server is starting
         logger.info('Starting server...')
+
+        time.sleep(5)  # Wait for server to start up
+
 
         self.thread = threading.Thread(target=self._start)
         self.thread.start()
@@ -126,3 +178,66 @@ class App(tk.Frame):
             except Exception as e:
                 print(f"Error could not clear console: {e}")
                 logger.error(f"Error could not clear console: {e}")
+
+
+class App(tk.Frame):
+    def update_app():
+    # get current version from config file
+        current_version = config.get("App", "version")
+
+        # create a Github instance
+        g = Github()
+
+        # get the repository by name and owner
+        repo = g.get_repo("PuzzixDev/Serverlauncher")
+
+        # get the latest release tag with prefix "v"
+        latest_tag = None
+        for tag in repo.get_tags():
+            if tag.name.startswith("v"):
+                if not latest_tag or tag.commit.committer.date > latest_tag.commit.committer.date:
+                    latest_tag = tag
+
+        if not latest_tag:
+            print("Latest tag not found")
+        else:
+            # get the latest release associated with the tag
+            latest_release = None
+            for release in repo.get_releases():
+                if release.tag_name == latest_tag.name:
+                    latest_release = release
+                    break
+
+            if not latest_release:
+                print("Latest release not found")
+            elif not latest_release.assets:
+                print("No assets found for the latest release")
+            elif latest_tag.name == current_version:
+                print("Already up-to-date")
+            else:
+                # download the latest release asset
+                latest_asset = latest_release.assets[0]
+                download_url = latest_asset.browser_download_url
+                r = requests.get(download_url)
+                with open("new_files.zip", "wb") as f:
+                    f.write(r.content)
+
+                # extract the contents of the zip file
+                with zipfile.ZipFile("new_files.zip", "r") as zip_ref:
+                    zip_ref.extractall("new_files")
+
+                # delete the zip file
+                os.remove("new_files.zip")
+
+                # replace old files with new ones
+                if os.path.exists("old_files"):
+                    shutil.rmtree("old_files")
+                shutil.move("new_files", "old_files")
+
+                # update the version in the config file
+                config.set("General", "version", latest_tag.name)
+                with open("config.ini", "w") as config_file:
+                    config.write(config_file)
+
+                print("Downloaded and installed the latest version")
+
