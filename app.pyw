@@ -1,10 +1,9 @@
-import tkinter as tk
+#imports
+import tkinter as tk,zipfile,os,shutil,requests,customtkinter
+
+#froms
+
 from tkinter import ttk
-import customtkinter
-import requests
-import shutil
-import os
-import zipfile
 from github import Github
 from pypresence import Presence
 from configparser import ConfigParser

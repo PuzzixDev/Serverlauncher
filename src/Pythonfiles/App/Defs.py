@@ -1,16 +1,9 @@
-import logging
-import tkinter as tk
-import os
-import re
-import threading
+import logging,tkinter as tk,os,re,threading,subprocess,time,urllib.request,requests,shutil,zipfile
+
 from configparser import ConfigParser
 from github import Github
-import subprocess 
-import time
-import urllib.request
-import requests
-import shutil
-import zipfile
+
+
 
 # Create a logger object with the desired name
 logger = logging.getLogger('logs')

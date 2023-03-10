@@ -1,6 +1,9 @@
+#imports
 import os
+
+#froms
 from configparser import ConfigParser
-import Types.Vanilla as van
+from src.Pythonfiles.Server.Types.Vanilla import urls
 
 
 
@@ -32,8 +35,8 @@ with open(run_path, 'w') as f:
     f.write(l1 + l2 + l3 + l4 + l5)
 
 # Download server jar file
-if version in van.urls:
-    url = van.urls[version]
+if version in urls:
+    url = urls[version]
     jar_file_path = os.path.join(Download_path[0], f'{type}_{version}.jar')
     os.system(f'curl -o "{jar_file_path}" "{url}"')
 else:
