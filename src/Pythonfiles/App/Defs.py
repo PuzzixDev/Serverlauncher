@@ -1,5 +1,6 @@
 import logging,tkinter as tk,os,re,threading,subprocess,time,urllib.request,requests,shutil,zipfile
 
+from tkinter import font
 from configparser import ConfigParser
 from github import Github
 
@@ -65,7 +66,7 @@ class Server(tk.Frame):
         self.console = tk.Listbox(self.console_frame, bg='#242424', fg='#ffffff')
         self.console.pack(side="left", fill="both", expand=True)
 
-        bold_font = tk.font.Font(self.console, self.console.cget("font"))
+        bold_font = font.Font(self.console, self.console.cget("font"))
         bold_font.configure(weight="bold")
         self.console.configure(font=bold_font)  
 
@@ -171,6 +172,20 @@ class Server(tk.Frame):
             except Exception as e:
                 print(f"Error could not clear console: {e}")
                 logger.error(f"Error could not clear console: {e}")
+    
+    def create(self):
+            try:
+                from src.Pythonfiles.Server.Server_main.Create import download
+                (download)
+                self.console.insert('end', "creating server")
+                logger.info("creating server")
+                print("creating server")
+            except Exception as e:
+                self.console.insert('end', f"error creating server {e}")
+                logger.error(f"error creating server{e}")
+                print(f"error creating server{e}")
+
+            
 
 
 class App(tk.Frame):
