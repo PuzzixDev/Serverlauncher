@@ -14,6 +14,11 @@ Discord: You can use slash command to manage the server ex(start,stop,ip,create)
 # Configuration
 You can customize various settings of the Minecraft server by modifying the server.properties file, which is located in the directory you chose to download the files in the config.ini. You can also modify the eula.txt file to accept the Minecraft End User License Agreement (EULA).
 
+# Preview
+![Server Management](docmentation/png_1.png)
+
+![App Settings](docmentation/png_2.png)
+
 # License
 Serverlauncher is released under the MIT License. See [License](LICENSE) for more information.
 
