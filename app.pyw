@@ -150,10 +150,13 @@ else:
         if os.path.exists("old_files"):
             shutil.rmtree("old_files")
         shutil.move("new_files", "old_files")
-        os.remove("old_files")
-
 
         print("Replaced old files with new ones")
+
+        # remove old files directory
+        if os.path.exists("old_files"):
+            shutil.rmtree("old_files")
+            print("Removed old files directory")
 
         # update the version in the config file
         config.set('App','Version', latest_tag.name)
