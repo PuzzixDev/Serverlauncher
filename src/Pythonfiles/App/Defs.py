@@ -172,6 +172,10 @@ class Server(tk.Frame):
                 print(f"Error could not clear console: {e}")
                 logger.error(f"Error could not clear console: {e}")
 
+    def create(self):
+        from Pythonfiles.Server.Server_main.Create import download as e
+        e()
+
 
 class App(tk.Frame):
     def update_app():
